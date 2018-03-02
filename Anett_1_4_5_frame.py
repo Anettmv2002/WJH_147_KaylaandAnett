@@ -13,7 +13,7 @@ def frame(original_image, color, frame_width):
     """
     #set the radius of the rounded corners
     width, height = original_image.size
-   thickness = int(frame_width * min(width, height)) # thickness in pixels
+    thickness = int(frame_width * min(width, height)) # thickness in pixels
     
     ###
     #create a mask
@@ -21,8 +21,8 @@ def frame(original_image, color, frame_width):
     
     #start with transparent mask
     r, g, b = color 
-  frame_mask = PIL.Image.new('RGBA', (width, height), (0,0,0,0))
-  Drawing_layer.rectanlge(0,0, width, thickness, fill = (r,g,b,255))
+    frame_mask = PIL.Image.new('RGBA', (width, height), (0,0,0,0))
+    Drawing_layer.rectanlge(0,0, width, thickness, fill = (r,g,b,255))
     drawing_layer = PIL.ImageDraw.Draw(frame_mask)
     
     # Make the new image, starting with all transparent
@@ -56,7 +56,7 @@ def get_images(directory=None):
             pass # do nothing with errors tying to open non-images
     return image_list, file_list
 
-def frame_all_images(directory=None color=(255,0,0), frame_width 0.10):
+def frame_all_images(directory=None, color=(255,0,0), frame_width=(0.10)):
     """ Saves a modfied version of each image in directory.
     
     Uses current directory if no directory is specified. 
