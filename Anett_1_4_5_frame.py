@@ -22,8 +22,9 @@ def frame(original_image, color, frame_width):
     #start with transparent mask
     r, g, b = color 
     frame_mask = PIL.Image.new('RGBA', (width, height), (0,0,0,0))
-    Drawing_layer.rectanlge(0,0, width, thickness, fill = (r,g,b,255))
     drawing_layer = PIL.ImageDraw.Draw(frame_mask)
+    drawing_layer.rectangle((0,0, width, thickness), fill=(r,g,b,255))
+    
     
     # Make the new image, starting with all transparent
     result = original_image.copy()
